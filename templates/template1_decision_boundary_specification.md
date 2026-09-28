@@ -73,6 +73,15 @@ A pre-deployment specification document defining the conditions under which an A
 
 **Design Principle:** The specification isolates the known from the unknown. Known scenarios are governed deterministically by sections C1, C2, D, and E. Unknown scenarios are governed accountably by this section. The boundary between them must be visible and auditable.
 
+C4. Observation Requirements — What the System Must Perceive to Evaluate Whether Conditions Still Hold
+
+A system can pass a test of what it is authorised to do while never having verified it can still perceive the condition that made the action valid in the first place. Confirming permitted scope (C1) and confirming the system can still observe whether that scope's conditions hold are two different tests — this section is the second one.
+
+Field	Notes
+Required Observations	What must this system be able to perceive, measure, or detect in order to determine whether the conditions underpinning each permitted action in C1 continue to apply?
+Observation Source	Where each required observation comes from (sensor, data feed, upstream system state, human input) and its refresh rate or latency
+Observation Gap Trigger	If a required observation becomes unavailable, stale, or unreliable, this is treated as its own Out-of-Design Trigger under C3 — the system has not fallen outside the specification's rules, it has fallen outside its ability to confirm the rules still apply, which carries the same governance consequence
+
 ## D. Intervention Threshold
 
 *Define the precise conditions that require human authorisation before the system proceeds. These are not monitoring triggers — they are the conditions that must stop autonomous execution.*
