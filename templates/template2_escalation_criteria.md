@@ -45,6 +45,7 @@ INVEST-compliant user stories translating each intervention threshold defined in
 | Time Window | Maximum time from trigger to required human action |
 | Evidence Presented | What information must accompany the escalation (link to Template 3 for detail) |
 | Definition of Done | What confirms this story is satisfied at UAT — not "reviewer was notified" but "reviewer could act correctly on what they received" |
+| Timeout Behaviour | What the system does automatically if the required human action does not occur within the Time Window. It must name a concrete default state change (e.g. auto-suspend), not a repeated notification, and the role accountable for that default firing |
 
 ### User Story 2
 
@@ -58,6 +59,7 @@ INVEST-compliant user stories translating each intervention threshold defined in
 | Time Window | Maximum time from trigger to required human action |
 | Evidence Presented | What information must accompany the escalation (link to Template 3 for detail) |
 | Definition of Done | What confirms this story is satisfied at UAT |
+| Timeout Behaviour | What the system does automatically if the required human action does not occur within the Time Window. It must name a concrete default state change (e.g. auto-suspend), not a repeated notification, and the role accountable for that default firing |
 
 ### User Story 3
 
@@ -71,6 +73,7 @@ INVEST-compliant user stories translating each intervention threshold defined in
 | Time Window | Maximum time from trigger to required human action |
 | Evidence Presented | What information must accompany the escalation (link to Template 3 for detail) |
 | Definition of Done | What confirms this story is satisfied at UAT |
+| Timeout Behaviour | What the system does automatically if the required human action does not occur within the Time Window. It must name a concrete default state change (e.g. auto-suspend), not a repeated notification, and the role accountable for that default firing |
 
 *Add rows as required — one story per intervention threshold in Template 1, Section D, plus one for each out-of-design trigger in Section C3.*
 
@@ -83,5 +86,8 @@ INVEST-compliant user stories translating each intervention threshold defined in
 | QA Lead Sign-Off | Confirms every acceptance criterion is independently testable |
 
 ---
+Changelog
+
+Sept 28, 2026 — Added Timeout Behaviour as a fifth acceptance-criteria field on all user stories. Time Window previously specified a deadline for required human action with no field capturing what happens if that deadline is missed. Prompted by a publicly reported AI agent incident in which an alert was acknowledged within minutes but the run continued for a further 2.5 hours before manual termination. The deadline existed in practice, but nothing forced a default action when it wasn't met. A required human action with a time limit and no enforced default is a deadline in name only.
 
 *Before the System Acts · Template 2 of 3: Escalation Criteria in User Story Format · Raghav Kapoor, CBAP · [linkedin.com/in/raghavkapoor01](https://linkedin.com/in/raghavkapoor01)*
