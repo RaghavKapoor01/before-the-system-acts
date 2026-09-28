@@ -73,14 +73,15 @@ A pre-deployment specification document defining the conditions under which an A
 
 **Design Principle:** The specification isolates the known from the unknown. Known scenarios are governed deterministically by sections C1, C2, D, and E. Unknown scenarios are governed accountably by this section. The boundary between them must be visible and auditable.
 
-C4. Observation Requirements — What the System Must Perceive to Evaluate Whether Conditions Still Hold
+### C4. Observation Requirements — What the System Must Perceive to Evaluate Whether Conditions Still Hold
 
-A system can pass a test of what it is authorised to do while never having verified it can still perceive the condition that made the action valid in the first place. Confirming permitted scope (C1) and confirming the system can still observe whether that scope's conditions hold are two different tests — this section is the second one.
+*A system can pass a test of what it is authorised to do while never having verified it can still perceive the condition that made the action valid in the first place. Confirming permitted scope (C1) and confirming the system can still observe whether that scope's conditions hold are two different tests — this section is the second one.*
 
-Field	Notes
-Required Observations	What must this system be able to perceive, measure, or detect in order to determine whether the conditions underpinning each permitted action in C1 continue to apply?
-Observation Source	Where each required observation comes from (sensor, data feed, upstream system state, human input) and its refresh rate or latency
-Observation Gap Trigger	If a required observation becomes unavailable, stale, or unreliable, this is treated as its own Out-of-Design Trigger under C3 — the system has not fallen outside the specification's rules, it has fallen outside its ability to confirm the rules still apply, which carries the same governance consequence
+| Field | Notes |
+|---|---|
+| Required Observations | What must this system be able to perceive, measure, or detect in order to determine whether the conditions underpinning each permitted action in C1 continue to apply? |
+| Observation Source | Where each required observation comes from (sensor, data feed, upstream system state, human input) and its refresh rate or latency |
+| Observation Gap Trigger | If a required observation becomes unavailable, stale, or unreliable, this is treated as its own Out-of-Design Trigger under C3 — the system has not fallen outside the specification's rules, it has fallen outside its ability to confirm the rules still apply, which carries the same governance consequence |
 
 ## D. Intervention Threshold
 
@@ -115,6 +116,12 @@ Observation Gap Trigger	If a required observation becomes unavailable, stale, or
 | Risk Owner Sign-Off | Name / Role / Date / Signature |
 | Compliance Sign-Off (if required) | Name / Role / Date / Signature |
 | Version History | Record all versions, dates, and the reason for each update |
+
+---
+
+## Changelog
+
+**Sept 28, 2026** — Added Section C4, Observation Requirements. Prompted by a practitioner exchange raising a distinct failure mode: a system can pass an execution-validity test while never having been able to perceive the condition that made the action valid in the first place. Passing what the system is authorised to do is not the same as confirming it can still see whether the conditions for that authorisation hold. A discovered observation gap is treated as its own Out-of-Design Trigger under C3.
 
 ---
 
